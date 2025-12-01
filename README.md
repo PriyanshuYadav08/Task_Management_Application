@@ -1,7 +1,6 @@
-# Task_Management_Application# Task Management App — Full Stack Developer Intern Case Study
+# Task Management App — Full Stack Developer Intern Case Study
 
-A full-stack task management application built as part of the **Full Stack Developer Intern Case Study**.  
-This project demonstrates proficiency in **React**, **Node.js**, **Express**, **PostgreSQL**, **Prisma**, **JWT authentication**, form validation, and automated testing.
+A full-stack task management application built as part of the **Full Stack Developer Intern Case Study**. This project demonstrates proficiency in **React**, **Node.js**, **Express**, **PostgreSQL**, **Prisma**, **JWT authentication**, form validation, and automated testing.
 
 ---
 
@@ -55,15 +54,27 @@ This project demonstrates proficiency in **React**, **Node.js**, **Express**, **
 ## 📁 Project Structure
 
 ```bash
-
 project/
-backend/
-src/
-prisma/
-package.json
-frontend/
-src/
-package.json
-README.md
-
+|--backend/
+|----src/
+|----prisma/
+|----package.json
+|--frontend/
+|----src/
+|----package.json
+|--README.md
 ```
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone Repo
+```bash
+git clone https://github.com/PriyanshuYadav08/Task_Management_Application.git
+cd Task_Management_Application
+```
+
+---
+
+## Stay Tuned for further Updates....
