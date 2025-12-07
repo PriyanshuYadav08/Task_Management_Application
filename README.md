@@ -1,6 +1,6 @@
-# Task Management App — Full Stack Developer Intern Case Study
+# Task Management App
 
-A full-stack task management application built as part of the **Full Stack Developer Intern Case Study**. This project demonstrates proficiency in **React**, **Node.js**, **Express**, **PostgreSQL**, **Prisma**, **JWT authentication**, form validation, and automated testing.
+This project demonstrates proficiency in **React**, **Node.js**, **Express**, **PostgreSQL**, **Prisma**, **JWT authentication**, form validation, and automated testing.
 
 ---
 
