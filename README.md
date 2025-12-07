@@ -55,14 +55,29 @@ A full-stack task management application built as part of the **Full Stack Devel
 
 ```bash
 project/
-|--backend/
-|----src/
-|----prisma/
-|----package.json
-|--frontend/
-|----src/
-|----package.json
-|--README.md
+├── backend/
+│ ├── package.json
+│ ├── tsconfig.json
+│ ├── src/
+│ │ ├── index.ts
+│ │ ├── app.ts
+│ │ ├── config/db.ts
+│ │ ├── controllers/
+│ │ ├── routes/
+│ │ ├── models/
+│ │ └── middleware/
+└── frontend/
+├── package.json
+├── vite.config.js
+├── index.html
+├── src/
+│ ├── main.jsx
+│ ├── App.jsx
+│ ├── index.css
+│ ├── api/axios.js
+│ ├── pages/
+│ ├── components/
+│ └── styles/
 ```
 
 ---
@@ -77,4 +92,42 @@ cd Task_Management_Application
 
 ---
 
-## Stay Tuned for further Updates....
+## 🧰 Prerequisites
+
+Install these before running the project -
+
+- **Node.js** (v18+ recommended)  
+- **npm** (comes with Node)  
+- **Git**  
+- **MongoDB Atlas account** (recommended) OR local MongoDB  
+- (Optional) **mongosh** or MongoDB Compass for debugging  
+
+---
+
+# 🚀 Getting Started (Local Development)
+
+You will run the backend and frontend separately.
+
+---
+
+# 🔧 Backend Setup
+
+## Navigate to backend folder
+```bash
+cd backend
+npm install
+npm install express mongoose bcrypt jsonwebtoken dotenv cors helmet express-async-handler zod
+npm install -D typescript ts-node-dev @types/node @types/express @types/bcrypt @types/jsonwebtoken @types/cors
+```
+
+---
+
+# Frontend Setup
+
+## Navigate to frontend folder
+```bash
+cd frontend
+npm install
+npm install react react-dom react-router-dom axios react-hook-form
+npm install -D vite @vitejs/plugin-react
+```
