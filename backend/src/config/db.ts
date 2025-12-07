@@ -1,4 +1,4 @@
-// backend/src/config/db.ts
+// src/config/db.ts
 import mongoose from "mongoose";
 
 export async function connectDB() {
@@ -7,14 +7,16 @@ export async function connectDB() {
 
   try {
     await mongoose.connect(uri, {
-      // optional, helpful for debugging
-      // serverSelectionTimeoutMS: 5000
+      serverSelectionTimeoutMS: 5000, // fail fast for debugging
+      socketTimeoutMS: 45000,
+      // tls: true, // usually not required; Atlas SRV enforces TLS automatically
     });
     console.log("✅ Connected to MongoDB");
   } catch (err: any) {
     console.error("❌ MongoDB connection failed:", err);
-    if (err.code === 'ENOTFOUND' || err.message?.includes('ENOTFOUND')) {
-      console.error("→ DNS lookup failed for the host in MONGODB_URI. Check the host value and ensure it matches your Atlas cluster host (e.g. cluster0.abcd1.mongodb.net).");
+    // print helpful hints
+    if (err.message?.includes("ENOTFOUND") || err.message?.includes("failed to connect to server")) {
+      console.error("→ Check Atlas IP Access List (whitelist) or your network/DNS.");
     }
     process.exit(1);
   }

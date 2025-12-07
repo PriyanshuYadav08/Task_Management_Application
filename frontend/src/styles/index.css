@@ -1,0 +1,218 @@
+:root {
+  --bg: linear-gradient(135deg, #f7fafc 0%, #e3e6f3 100%);
+  --card: #fff;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --danger: #ef4444;
+  --shadow: 0 6px 24px rgba(79,70,229,0.08);
+  --radius: 12px;
+}
+
+/* layout */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  color: #111;
+  min-height: 100vh;
+}
+.container {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+/* header */
+.topnav {
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+.topnav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand a {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.3rem;
+  letter-spacing: -1px;
+}
+nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.nav-link {
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  background: rgba(79,70,229,0.08);
+  color: var(--accent);
+}
+.btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 4px 16px rgba(79,70,229,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+.btn.ghost {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: rgba(79,70,229,0.06);
+  color: var(--accent);
+}
+
+/* footer */
+.footer {
+  margin-top: 48px;
+  padding: 20px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* forms */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ee;
+  margin-top: 8px;
+  font-size: 1em;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(79,70,229,0.10);
+  outline: none;
+}
+.create-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+@media (max-width: 720px) {
+  .create-form {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}
+
+/* tasks list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.task-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+.task-row:hover {
+  box-shadow: 0 12px 36px rgba(79,70,229,0.12);
+  transform: translateY(-2px) scale(1.01);
+}
+.status-btn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+}
+.status-btn.done {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #065f46;
+}
+.task-main { flex: 1; }
+.task-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.task-title.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+.task-desc {
+  color: #6b7280;
+  margin-top: 6px;
+  font-size: 0.98em;
+}
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.small-btn {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.98em;
+  transition: background 0.2s, border-color 0.2s;
+}
+.small-btn:hover {
+  background: rgba(79,70,229,0.06);
+  border-color: var(--accent);
+}
+.small-btn.danger {
+  color: var(--danger);
+  border-color: rgba(239,68,68,0.18);
+}
+.page-title {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* generic card */
+.signup-card,
+.login-card {
+  max-width: 520px;
+  margin: 28px auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(79,70,229,0.08);
+  border: 1px solid rgba(79,70,229,0.04);
+}

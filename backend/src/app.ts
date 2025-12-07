@@ -1,11 +1,9 @@
-// backend/src/app.ts
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-
-// import your routes here (if you have them)
-// import authRoutes from "./routes/auth.routes";
-// import taskRoutes from "./routes/task.routes";
+import authRoutes from "./routes/auth.route";
+import taskRoutes from "./routes/task.route";
+import { errorHandler } from "./middleware/error.middleware";
 
 const app = express();
 
@@ -13,11 +11,13 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
-// health check
+// optional health
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
-// use routes (uncomment when you have routes)
-// app.use("/api/auth", authRoutes);
-// app.use("/api/tasks", taskRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
+
+// error handler (last)
+app.use(errorHandler);
 
 export default app;

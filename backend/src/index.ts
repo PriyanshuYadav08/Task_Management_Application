@@ -1,5 +1,4 @@
-// backend/src/index.ts
-import * as dotenv from "dotenv"; // <-- use namespace import (works with any tsconfig)
+import * as dotenv from "dotenv";
 dotenv.config();
 
 import app from "./app";
@@ -15,6 +14,6 @@ async function startServer() {
 }
 
 startServer().catch((err) => {
-  console.error("Failed to start server:", err);
+  console.error("Failed to start server - ", err);
   process.exit(1);
 });
