@@ -1,6 +1,6 @@
-# Task Management App
+# Task Management Application
 
-This project demonstrates proficiency in **React**, **Node.js**, **Express**, **PostgreSQL**, **Prisma**, **JWT authentication**, form validation, and automated testing.
+This project demonstrates proficiency in **React**, **Node.js**, **Express**, **MongoDB**, **Prisma**, **JWT authentication**, **Form Validation** and **Testing**.
 
 ---
 
@@ -16,16 +16,11 @@ This project demonstrates proficiency in **React**, **Node.js**, **Express**, **
 
 ### Backend
 - Node.js + Express (TypeScript)
-- PostgreSQL
+- MongoDB
 - Prisma ORM
 - JWT Authentication
 - Bcrypt
 - Zod (validation)
-
-### Testing
-- Jest
-- Supertest (backend)
-- React Testing Library (frontend)
 
 ---
 
